@@ -141,27 +141,38 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 
 
 /* Gallery styles */
-.galeria, .galeria-demolishing, .food-gallery {
+.galeria, .food-gallery { /* Removed .galeria-demolishing from this rule */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px; /* Slightly increased gap */
+    gap: 15px;
     margin-bottom: 20px;
+}
+
+/* Specific rule for .galeria-demolishing container */
+.galeria-demolishing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px; /* Aggressively reduced gap for image pairs */
+    margin-bottom: 20px; /* Retain common margin */
 }
 
 .galeria-demolishing .image-pair {
     display: flex;
-    justify-content: space-around; /* Better distribution if pairs are not full width */
-    gap: 10px; /* Space between images in a pair */
-    margin-bottom: 10px; /* Reduced spacing between pairs */
+    justify-content: center; /* Center pairs if they don't fill the width */
+    gap: 4px; /* Drastically reduced space between images in a pair */
+    margin-bottom: 5px; /* Drastically reduced spacing between pairs */
     width: 100%; /* Allow pairs to take full width to center content */
+    max-width: 1200px; /* Significantly increase max-width of the pair container */
+    margin-left: auto; /* Center the pair container itself if gallery is wider */
+    margin-right: auto;
 }
 
 .galeria-demolishing img {
-    width: calc(50% - 10px); /* Adjust width considering the gap, for 2 images per pair */
-    max-width: 350px; /* Increased max-width for larger images */
+    width: calc(50% - 2px); /* Each image takes almost half, accounting for 4px gap */
+    max-width: 500px; /* Significantly increased max-width for larger images */
     height: auto; /* Maintain aspect ratio */
-    /* min-height: 150px; /* Removing min-height to rely on auto height with aspect ratio */
     object-fit: cover;
     border-radius: 8px; /* Slightly softer radius */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
@@ -176,16 +187,16 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 /* Food Gallery specific - uses grid */
 .food-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increased minmax for larger images */
-    gap: 10px; /* Reduced gap */
-    max-width: 900px; /* Max width for the food gallery */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Aggressively increased minmax for substantially larger images */
+    gap: 5px; /* Aggressively reduced gap */
+    max-width: 900px; /* Max width for the food gallery - can be reviewed if images are much larger */
     margin: 20px auto;
 }
 
 .food-gallery img {
     width: 100%;
-    height: 280px; /* Increased height for larger, more squarish images */
-    object-fit: cover;
+    height: auto; /* Height will be automatic based on aspect ratio */
+    object-fit: cover; /* Still useful to ensure uniform filling if aspect ratios vary widely */
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -198,14 +209,21 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 
 @media (max-width: 768px) {
     /* .food-gallery grid-template-columns already handled by auto-fit */
-    .galeria-demolishing img { /* Stack images in pairs on smaller screens */
-        width: calc(100% - 10px); /* Full width minus gap, when stacked in .image-pair */
-        max-width: 100%; /* Allow image to fill the stacked .image-pair container width */
-    }
     .galeria-demolishing .image-pair {
         flex-direction: column; /* Stack images vertically */
         align-items: center; /* Center images in column */
+        gap: 4px; /* Maintain small gap when stacked */
     }
+    .galeria-demolishing img { /* Stack images in pairs on smaller screens */
+        width: 100%; /* Images take full width of the .image-pair container */
+        max-width: 100%; /* Ensure it doesn't exceed container */
+        /* margin-bottom: 4px; /* Add margin if gap isn't sufficient for stacked items */
+    }
+    /* To remove margin from the last image in a stacked pair if margin-bottom is used:
+    .galeria-demolishing .image-pair img:last-child {
+        margin-bottom: 0;
+    }
+    */
 }
 
 /* Crew Section */
