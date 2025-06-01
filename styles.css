@@ -235,6 +235,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* Align cards to the top if they have different heights */
     gap: 2rem; /* 32px gap */
     margin: 30px auto; /* Maintained for centering and vertical spacing */
     box-sizing: border-box;
@@ -290,10 +291,10 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 }
 
 .member-info p {
-    font-size: 0.95rem; /* Slightly smaller for card descriptions */
+    font-size: 1.1rem; /* Increased font size */
     color: #555;
     text-align: center; /* Ensure paragraph text is centered */
-    line-height: 1.5; /* Improved line height for readability */
+    line-height: 1.7; /* Adjusted line height for new font size */
     /* max-width: 60ch; /* Removed to allow text to fill more space */
 }
 
@@ -305,19 +306,22 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         text-align: left; /* Align text to the left */
         max-width: 1000px; /* Further increased max-width for even wider card */
         /* background-color: aqua !important; */ /* DIAGNOSTIC - Removed */
+        min-width: 0; /* Flexbox best practice */
+        /* padding: 20px; is on the base .team-member, should be fine */
+        /* gap: 20px; is on the base .team-member, should be fine for image and text-info spacing */
     }
     .team-member img {
         width: 180px; /* Increased image size for side-by-side layout */
         height: 180px; /* Increased image size for side-by-side layout */
         margin-bottom: 0; /* Remove bottom margin as image is side-by-side */
-        margin-right: 20px; /* Add right margin for spacing */
-        /* If gap on .team-member is primary spacer, this margin-right might be redundant */
+        /* margin-right: 20px; /* This is handled by parent .team-member gap: 20px; */
+        flex-shrink: 0; /* Ensure image doesn't shrink if card is too narrow */
     }
     .member-info {
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
-        min-width: 500px !important; /* DIAGNOSTIC & TARGETED CHANGE */
+        min-width: 500px; /* TARGETED CHANGE - !important removed */
         /* background-color: lime !important; */ /* DIAGNOSTIC - Removed */
         /* width: 70% !important; */ /* DIAGNOSTIC - Removed */
         align-items: flex-start; /* Align text content to the start (top) */
@@ -333,5 +337,6 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
     .team-member {
          max-width: 45%; /* Allow two cards per row on larger screens */
          /* background-color: aqua !important; */ /* Ensure diagnostics removed if they were here too */
+         min-width: 0; /* Flexbox best practice for items that might wrap */
     }
 }
