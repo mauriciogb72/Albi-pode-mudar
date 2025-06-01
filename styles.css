@@ -292,7 +292,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
     color: #555;
     text-align: center; /* Ensure paragraph text is centered */
     line-height: 1.5; /* Improved line height for readability */
-    max-width: 60ch; /* Constrain line length for better readability */
+    /* max-width: 60ch; /* Removed to allow text to fill more space */
 }
 
 /* Responsive adjustments for team members */
@@ -301,7 +301,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         flex-direction: row; /* Image and text side-by-side */
         align-items: center; /* Vertically center image and text block */
         text-align: left; /* Align text to the left */
-        max-width: 500px; /* Adjust max-width for wider layout */
+        max-width: 800px; /* Increased max-width for wider card and more text space */
     }
     .team-member img {
         width: 180px; /* Increased image size for side-by-side layout */
