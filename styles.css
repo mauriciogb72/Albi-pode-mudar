@@ -1,22 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
-    font-family: 'Georgia', serif;
-    color: #ff6347;
+    font-family: 'Roboto', 'Georgia', serif;
+    color: #212529;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.2em; /* Slightly increased for better impact */
+    margin-bottom: 0.75em; /* Adjusted margin */
 }
 
 p {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em; /* Slightly reduced for better balance with new body font */
     color: #555;
     margin-bottom: 1em;
 }
@@ -25,7 +29,7 @@ button {
     background-color: #ff6347;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1em;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -37,80 +41,266 @@ button:hover {
 }
 
 h2 {
-    color: #ff6347;
-    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    color: #ff6347; /* Accent color for H2 */
+    font-size: 1.8em; /* Adjusted size */
+    margin-bottom: 0.5em; /* Added margin */
 }
 
-/* Estilo da galeria demolishing */
-.galeria-demolishing .image-pair {
+/* Navigation Styles */
+nav { /* Added a general nav style for spacing */
+    margin-bottom: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the nav items */
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+nav li:last-child { /* Remove margin from the last item */
+    margin-right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #343a40; /* Consistent with body text */
+    font-weight: 700; /* Bolder links */
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover, nav a.active { /* Added .active class for current page indication */
+    color: #ff6347; /* Accent color on hover */
+    background-color: #e9ecef; /* Light background on hover */
+}
+
+
+/* Welcome Section specific styles */
+#welcome-section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px; /* Ensure padding within the section */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+#welcome-section h1 {
+    margin-bottom: 30px; /* More space below title */
+}
+
+#welcome-section p {
+    font-size: 1.25em; /* Larger text for welcome message */
+    color: #495057; /* Slightly softer than main body text */
+    max-width: 700px; /* Constrain width for readability */
+    margin-top: 15px;
+    margin-bottom: 30px; /* More space before button */
+}
+
+#welcome-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    width: 700px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Base Styles (for demolishing, pictures, food) */
+#demolishing, #pictures, #food {
+    padding: 40px 20px; /* Consistent padding for sections */
+    margin-bottom: 30px; /* Space between sections */
+    box-sizing: border-box;
+}
+
+#demolishing h1, #pictures h1, #food h1 { /* Ensure section titles are prominent */
+    margin-bottom: 30px;
+}
+
+#demolishing p, #pictures p, #food p { /* Paragraphs within sections */
+    font-size: 1.1em;
+    color: #495057;
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
 }
 
+
+/* Gallery styles */
+.galeria, .galeria-demolishing, .food-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Slightly increased gap */
+    margin-bottom: 20px;
+}
+
+.galeria-demolishing .image-pair {
+    display: flex;
+    justify-content: space-around; /* Better distribution if pairs are not full width */
+    gap: 10px; /* Space between images in a pair */
+    margin-bottom: 15px; /* Spacing between pairs */
+    width: 100%; /* Allow pairs to take full width to center content */
+}
+
 .galeria-demolishing img {
-    width: 45%;
-    margin: 0 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    width: calc(50% - 10px); /* Adjust width considering the gap, for 2 images per pair */
+    max-width: 250px; /* Increased max-width for better viewing */
+    height: auto; /* Maintain aspect ratio */
+    min-height: 150px; /* Ensure a minimum height */
+    object-fit: cover;
+    border-radius: 8px; /* Slightly softer radius */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .galeria-demolishing img:hover {
     transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
-/* Estilo da seção crew */
+/* Food Gallery specific - uses grid */
+.food-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    max-width: 900px; /* Max width for the food gallery */
+    margin: 20px auto;
+}
+
+.food-gallery img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniform look, adjust as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    /* .food-gallery grid-template-columns already handled by auto-fit */
+    .galeria-demolishing img { /* Stack images in pairs on smaller screens */
+        width: calc(100% - 10px); /* Full width minus gap */
+        max-width: 300px; /* Adjust max-width for single column */
+    }
+    .galeria-demolishing .image-pair {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images in column */
+    }
+}
+
+/* Crew Section */
 #crew {
-    padding: 2rem;
+    padding: 40px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem; /* 32px gap */
+    max-width: 1200px; /* Increased max-width for crew section */
+    margin: 30px auto; /* Added top margin */
+    box-sizing: border-box;
 }
 
-#crew h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+#crew > h1 { /* Targeting the main H1 of the crew section */
+    width: 100%; /* Ensure it spans full width above cards */
+    margin-bottom: 2.5rem; /* More space below the main title */
+    font-size: 2.2em; /* Consistent with other H1s */
 }
 
-/* Estilo de cada membro */
 .team-member {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column; /* Stack image and info vertically on smaller screens initially */
+    align-items: center; /* Center items when stacked */
+    text-align: center; /* Center text when stacked */
     margin-bottom: 30px;
-    gap: 20px; /* Espaço entre a imagem e o texto */
-    max-width: 600px;
+    gap: 20px;
+    max-width: 320px; /* Max width for a team member card */
+    background-color: #fff; /* Card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
 
 .team-member img {
-    width: 200px;
-    height: auto;
+    width: 150px; /* Slightly smaller image for card layout */
+    height: 150px; /* Square aspect ratio for profile pics */
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-
-.team-member img:hover {
-    transform: scale(1.05);
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px; /* Space between image and text */
 }
 
 .member-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+    align-items: center; /* Center text within info block */
+    text-align: center; /* Ensure text is centered */
 }
 
 .member-info h2 {
-    margin: 0;
-    font-size: 1.5rem;
+    margin: 0 0 8px 0;
+    font-size: 1.4em; /* Adjusted for card layout */
+    color: #343a40;
 }
 
 .member-info p {
-    margin-top: 5px;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller for card descriptions */
     color: #555;
+    text-align: center; /* Ensure paragraph text is centered */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Responsive adjustments for team members */
+@media (min-width: 576px) { /* Small devices (landscape phones, 576px and up) */
+    .team-member {
+        flex-direction: row; /* Image and text side-by-side */
+        align-items: flex-start; /* Align items to the top */
+        text-align: left; /* Align text to the left */
+        max-width: 500px; /* Adjust max-width for wider layout */
+    }
+    .team-member img {
+        width: 120px; /* Adjust image size */
+        height: 120px;
+        margin-bottom: 0; /* Remove bottom margin as image is side-by-side */
+        margin-right: 20px; /* Add right margin for spacing */
+    }
+    .member-info {
+        align-items: flex-start; /* Align text to the left */
+        text-align: left;
+    }
+    .member-info p {
+        text-align: left;
+    }
+}
+
+@media (min-width: 992px) { /* Medium devices (tablets, 992px and up) */
+    .team-member {
+         max-width: 45%; /* Allow two cards per row on larger screens */
+    }
 }
