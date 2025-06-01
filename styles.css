@@ -230,7 +230,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 #crew {
     width: 90%; /* Make width responsive */
     max-width: 1400px; /* Increase max-width cap */
-    background-color: fuchsia !important; /* DIAGNOSTIC */
+    /* background-color: fuchsia !important; */ /* DIAGNOSTIC - Removed */
     padding: 40px 20px;
     display: flex;
     flex-wrap: wrap;
@@ -304,7 +304,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         align-items: center; /* Vertically center image and text block */
         text-align: left; /* Align text to the left */
         max-width: 1000px; /* Further increased max-width for even wider card */
-        background-color: aqua !important; /* DIAGNOSTIC */
+        /* background-color: aqua !important; */ /* DIAGNOSTIC - Removed */
     }
     .team-member img {
         width: 180px; /* Increased image size for side-by-side layout */
@@ -314,21 +314,24 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         /* If gap on .team-member is primary spacer, this margin-right might be redundant */
     }
     .member-info {
-        /* Removed flex-grow, flex-shrink, flex-basis for diagnostic width percentage */
-        width: 70% !important; /* DIAGNOSTIC - 70% of parent .team-member card */
-        background-color: lime !important; /* DIAGNOSTIC */
-        min-width: 0; /* Prevent text overflow from breaking layout */
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        min-width: 500px !important; /* DIAGNOSTIC & TARGETED CHANGE */
+        /* background-color: lime !important; */ /* DIAGNOSTIC - Removed */
+        /* width: 70% !important; */ /* DIAGNOSTIC - Removed */
         align-items: flex-start; /* Align text content to the start (top) */
         text-align: left; /* Align text to the left */
     }
     .member-info p {
         text-align: left; /* Ensure paragraph text aligns left in side-by-side */
-        /* max-width: 60ch; /* Already added to base, but could be specific here if needed */
+        /* max-width: 60ch; /* Removed to allow text to fill more space */
     }
 }
 
 @media (min-width: 992px) { /* Medium devices (tablets, 992px and up) */
     .team-member {
          max-width: 45%; /* Allow two cards per row on larger screens */
+         /* background-color: aqua !important; */ /* Ensure diagnostics removed if they were here too */
     }
 }
