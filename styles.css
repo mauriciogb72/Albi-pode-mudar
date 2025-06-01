@@ -305,9 +305,9 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         align-items: center; /* Vertically center image and text block */
         text-align: left; /* Align text to the left */
         max-width: 1000px; /* Further increased max-width for even wider card */
+        min-width: 700px; /* Ensure card is wide enough for its content */
+        /* overflow: hidden; */ /* DIAGNOSTIC - Removed */
         /* background-color: aqua !important; */ /* DIAGNOSTIC - Removed */
-        min-width: 0; /* Flexbox best practice */
-        overflow: hidden; /* Ensures parent visually contains children */
         /* padding: 20px; is on the base .team-member, should be fine */
         /* gap: 20px; is on the base .team-member, should be fine for image and text-info spacing */
     }
@@ -323,7 +323,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         flex-shrink: 1;
         flex-basis: 0;
         min-width: 500px; /* TARGETED CHANGE - !important removed */
-        /* background-color: lightblue; */ /* DIAGNOSTIC - Removed */
+        background-color: lightgoldenrodyellow !important; /* DIAGNOSTIC */
         /* width: 70% !important; */ /* DIAGNOSTIC - Removed */
         align-items: flex-start; /* Align text content to the start (top) */
         text-align: left; /* Align text to the left */
