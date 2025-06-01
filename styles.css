@@ -228,13 +228,14 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 
 /* Crew Section */
 #crew {
+    width: 90%; /* Make width responsive */
+    max-width: 1400px; /* Increase max-width cap */
     padding: 40px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem; /* 32px gap */
-    max-width: 1200px; /* Increased max-width for crew section */
-    margin: 30px auto; /* Added top margin */
+    margin: 30px auto; /* Maintained for centering and vertical spacing */
     box-sizing: border-box;
 }
 
@@ -301,7 +302,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         flex-direction: row; /* Image and text side-by-side */
         align-items: center; /* Vertically center image and text block */
         text-align: left; /* Align text to the left */
-        max-width: 800px; /* Increased max-width for wider card and more text space */
+        max-width: 1000px; /* Further increased max-width for even wider card */
     }
     .team-member img {
         width: 180px; /* Increased image size for side-by-side layout */
@@ -310,7 +311,9 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         margin-right: 20px; /* Add right margin for spacing */
     }
     .member-info {
-        flex: 1; /* Allow text block to take available space */
+        flex-grow: 1; /* Allow to grow if more space is available */
+        flex-shrink: 0; /* Prevent shrinking below basis if possible */
+        flex-basis: 600px; /* Suggest a large initial size for the text area */
         min-width: 0; /* Prevent text overflow from breaking layout */
         align-items: flex-start; /* Align text content to the start (top) */
         text-align: left; /* Align text to the left */
