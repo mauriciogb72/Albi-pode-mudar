@@ -323,7 +323,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         flex-shrink: 1;
         flex-basis: 0;
         min-width: 500px; /* TARGETED CHANGE - !important removed */
-        background-color: lightgoldenrodyellow !important; /* DIAGNOSTIC */
+        /* background-color: lightgoldenrodyellow !important; */ /* DIAGNOSTIC - Removed */
         /* width: 70% !important; */ /* DIAGNOSTIC - Removed */
         align-items: flex-start; /* Align text content to the start (top) */
         text-align: left; /* Align text to the left */
