@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Up Next</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button onclick="window.history.back()">Voltar</button>
+    <h1>Prepare your legs</h1>
+    <p>Make sure you made a few squats on the last weeks for attacking Illhorn!</p>
+    
+    <h2>Questionary</h2>
+    <form id="health-form">
+        <label for="q1">1. Do you know what BJJ is?</label>
+        <select id="q1" name="q1" required>
+            <option value="Sim">Yes</option>
+            <option value="Não">No</option>
+        </select>
+
+        <label for="q2">2. Do you like Supertramp?</label>
+        <select id="q2" name="q2" required>
+            <option value="Sim">Yes</option>
+            <option value="Não">No</option>
+        </select>
+        
+        <label for="q3">3. Did you vote for aFd?</label>
+        <select id="q3" name="q3" required>
+            <option value="Sim">Yes</option>
+            <option value="Não">No</option>
+        </select>
+        
+        <h2>We will contact soon</h2>
+        <label for="email">Your best e-mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <script>
+        document.getElementById('health-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o envio do formulário
+
+            // Altere a mensagem do alert para algo personalizado
+            alert('Obrigado por enviar suas repipooppoporaremos em contato em breve!');
+
+            // Limpa o formulário após o envio
+            this.reset();
+        });
+    </script>
+</body>
+</html>

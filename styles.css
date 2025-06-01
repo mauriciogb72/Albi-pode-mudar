@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    color: #ff6347;
+    text-align: center;
+    font-size: 2em;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+h2 {
+    color: #ff6347;
+    font-size: 1.5em;
+}
+
+/* Estilo da galeria demolishing */
+.galeria-demolishing .image-pair {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.galeria-demolishing img {
+    width: 45%;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeria-demolishing img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo da seção crew */
+#crew {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#crew h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Estilo de cada membro */
+.team-member {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    max-width: 600px;
+}
+
+.team-member img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.team-member img:hover {
+    transform: scale(1.05);
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.member-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.member-info p {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #555;
+}

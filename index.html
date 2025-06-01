@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem Inesquecível</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #welcome-image {
+            display: block; /* Ensures the image is displayed as a block element */
+            margin: 0 auto; /* Centers the image horizontally */
+            max-width: 100%; /* Ensures the image doesn't exceed the container width */
+            width: 700px; /* Sets a specific width */
+            height: auto; /* Maintains the aspect ratio */
+            border-radius: 10px; /* Optional: Adds rounded corners */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow */
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-section">
+        <h1>Welcome to Albi's Last Updates!</h1>
+        <img src="welcome.HEIC" alt="Welcome Image" id="welcome-image">
+        <p>Where the sky feels suspiciously close and the wind seems to be plotting something... let’s dive into this *unforgettable* journey.</p>
+        <button onclick="enterSite()">Enter</button>
+    </div>
+
+    <div id="home-page" style="display: none;">
+        <h1>Risoud Resort Restauration</h1>
+        <nav>
+            <ul>
+                <li><a href="#demolishing" onclick="showSection('demolishing')">Demolishing</a></li>
+                <li><a href="#pictures" onclick="showSection('pictures')">Pictures</a></li>
+                <li><a href="#crew" onclick="showSection('crew')">Crew</a></li>
+                <li><a href="#food" onclick="showSection('food')">Food</a></li>
+                <li><a href="next.html">Coming up Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="demolishing" style="display: none;">
+        <button onclick="showSection('home-page')">Back</button>
+        <h1>Demolishing: Proof We Actually Did Something.</h1>
+        <p>write somehting</p>
+        <div class="galeria-demolishing">
+            <div class="image-pair">
+                <img src="demolishing/demo1.jpeg" alt="Before 1">
+                <img src="demolishing/demo2.jpg" alt="After 1">
+            </div>
+            <div class="image-pair">
+                <img src="demolishing/demo3.jpg" alt="Before 2">
+                <img src="demolishing/demo4.jpg" alt="After 2">
+            </div>
+            <div class="image-pair">
+                <img src="demolishing/demo6.jpg" alt="Before 3">
+                <img src="demolishing/demo7.jpg" alt="After 3">
+            </div>
+            <div class="image-pair">
+                <img src="demolishing/demo10.jpg" alt="Before 3">
+                <img src="demolishing/demo9.jpg" alt="After 3">
+            </div>
+            <div class="image-pair">
+                <img src="demolishing/demo11.jpg" alt="Before 3">
+                <img src="demolishing/demo12.jpg" alt="After 3">
+            </div>
+            <div class="image-pair">
+                <img src="demolishing/demo13.jpg" alt="Before 3">
+                <img src="demolishing/demo14.jpg" alt="After 3">
+            </div>
+            <div class="image-pair">
+                <img src="demolishing/demo15.jpg" alt="Before 3">
+                <img src="demolishing/demo16.jpg" alt="After 3">
+            </div>
+        </div>
+    </div>
+
+    <div id="pictures" style="display: none;">
+        <button onclick="showSection('home-page')">Back</button>
+        <h1>Pictures</h1>
+        <p>Cool pics</p>
+        <div class="galeria-demolishing">
+            <div class="image-pair">
+                <img src="pictures/pic1.HEIC" alt="Before 1">
+                <img src="pictures/pic2.HEIC" alt="After 1">
+            </div>
+            <div class="image-pair">
+                <img src="pictures/pic3.HEIC" alt="Before 2">
+                <img src="pictures/pic4.HEIC" alt="After 2">
+            </div>
+            <div class="image-pair">
+                <img src="pictures/pic5.HEIC" alt="Before 3">
+                <img src="pictures/pic6.HEIC" alt="After 3">
+            </div>
+            <div class="image-pair">
+                <img src="pictures/pic7.HEIC" alt="Before 3">
+                <img src="pictures/pic8.HEIC" alt="After 3">
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <div id="food" style="display: none;">
+        <button onclick="showSection('home-page')">Back</button>
+        <h1>Food</h1>
+        <p>Berable possible without it</p>
+        <div class="galeria-demolishing">
+            <div class="image-pair">
+                <img src="food/banana.jpeg" alt="Before 1">
+                <img src="food/jantar 1.jpeg" alt="After 1">
+            </div>
+            <div class="image-pair">
+                <img src="food/food11.HEIC" alt="Before 2">
+                <img src="food/jantar 3.jpeg" alt="After 2">
+            </div>
+        </div>
+    </div>
+
+ <!-- Crew Section -->
+<div id="crew" style="display: none;">
+    <button onclick="showSection('home-page')">Back</button>
+    <h1>Meet Our Team</h1>
+
+    <div class="team-member">
+        <img src="caco.jpg" alt="Crew Member 1">
+        <div class="member-info">
+            <h2>Caco</h2>
+            <p>A seamark indicate the safe side to pass a danger or a feature, such as a bend in channel or end of a shoal, as a lighthouse, serve as a guide.</p>  
+            <p>For those who seek home, shelter or those who are lost - wand’ring barks sailing through endless skies when the black night sighs. The prettiest of the prettiest ever-fixed mark.</p>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="mauricioprofile.jpg" alt="Mauricio">
+        <div class="member-info">
+            <h2>Mauricio</h2>
+            <p>faixa preta lisa porra</p>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="didi.jpg" alt="Didier">
+        <div class="member-info">
+            <h2>Didier</h2>
+            <p>Texto de apresentação sobre essa pessoa.</p>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="nico.jpg" alt="Nicola">
+        <div class="member-info">
+            <h2>Nicola</h2>
+            <p>Texto de apresentação sobre essa pessoa.</p>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="malu2.jpeg" alt="Malou">
+        <div class="member-info">
+            <h2>Malou</h2>
+            <p>Texto de apresentação sobre essa pessoa.</p>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="fred.jpg" alt="Dr. Fred">
+        <div class="member-info">
+            <h2>Dr. Fred</h2>
+            <p>Texto de apresentação sobre essa pessoa.</p>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="jan.jpg" alt="Jan">
+        <div class="member-info">
+            <h2>Jan</h2>
+            <p>Texto de apresentação sobre essa pessoa.</p>
+        </div>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
