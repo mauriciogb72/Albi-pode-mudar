@@ -265,8 +265,8 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 
 
 .team-member img {
-    width: 150px; /* Slightly smaller image for card layout */
-    height: 150px; /* Square aspect ratio for profile pics */
+    width: 250px; /* Increased image size */
+    height: 250px; /* Increased image size */
     object-fit: cover;
     border-radius: 50%; /* Circular images */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -292,28 +292,32 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
     color: #555;
     text-align: center; /* Ensure paragraph text is centered */
     line-height: 1.5; /* Improved line height for readability */
+    max-width: 60ch; /* Constrain line length for better readability */
 }
 
 /* Responsive adjustments for team members */
 @media (min-width: 576px) { /* Small devices (landscape phones, 576px and up) */
     .team-member {
         flex-direction: row; /* Image and text side-by-side */
-        align-items: flex-start; /* Align items to the top */
+        align-items: center; /* Vertically center image and text block */
         text-align: left; /* Align text to the left */
         max-width: 500px; /* Adjust max-width for wider layout */
     }
     .team-member img {
-        width: 120px; /* Adjust image size */
-        height: 120px;
+        width: 180px; /* Increased image size for side-by-side layout */
+        height: 180px; /* Increased image size for side-by-side layout */
         margin-bottom: 0; /* Remove bottom margin as image is side-by-side */
         margin-right: 20px; /* Add right margin for spacing */
     }
     .member-info {
-        align-items: flex-start; /* Align text to the left */
-        text-align: left;
+        flex: 1; /* Allow text block to take available space */
+        min-width: 0; /* Prevent text overflow from breaking layout */
+        align-items: flex-start; /* Align text content to the start (top) */
+        text-align: left; /* Align text to the left */
     }
     .member-info p {
-        text-align: left;
+        text-align: left; /* Ensure paragraph text aligns left in side-by-side */
+        /* max-width: 60ch; /* Already added to base, but could be specific here if needed */
     }
 }
 
