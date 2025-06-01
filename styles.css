@@ -230,6 +230,7 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
 #crew {
     width: 90%; /* Make width responsive */
     max-width: 1400px; /* Increase max-width cap */
+    background-color: fuchsia !important; /* DIAGNOSTIC */
     padding: 40px 20px;
     display: flex;
     flex-wrap: wrap;
@@ -303,17 +304,19 @@ nav a:hover, nav a.active { /* Added .active class for current page indication *
         align-items: center; /* Vertically center image and text block */
         text-align: left; /* Align text to the left */
         max-width: 1000px; /* Further increased max-width for even wider card */
+        background-color: aqua !important; /* DIAGNOSTIC */
     }
     .team-member img {
         width: 180px; /* Increased image size for side-by-side layout */
         height: 180px; /* Increased image size for side-by-side layout */
         margin-bottom: 0; /* Remove bottom margin as image is side-by-side */
         margin-right: 20px; /* Add right margin for spacing */
+        /* If gap on .team-member is primary spacer, this margin-right might be redundant */
     }
     .member-info {
-        flex-grow: 1; /* Allow to grow if more space is available */
-        flex-shrink: 0; /* Prevent shrinking below basis if possible */
-        flex-basis: 600px; /* Suggest a large initial size for the text area */
+        /* Removed flex-grow, flex-shrink, flex-basis for diagnostic width percentage */
+        width: 70% !important; /* DIAGNOSTIC - 70% of parent .team-member card */
+        background-color: lime !important; /* DIAGNOSTIC */
         min-width: 0; /* Prevent text overflow from breaking layout */
         align-items: flex-start; /* Align text content to the start (top) */
         text-align: left; /* Align text to the left */

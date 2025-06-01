@@ -6,6 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viagem Inesquecível</title>
     <link rel="stylesheet" href="styles.css">
+   <style>
+     /* Crew Section Width Fixes - Embedded */
+     #crew {
+       width: 90%;
+       max-width: 1400px; /* Ensures overall section can be wide */
+       margin-left: auto; /* Maintain centering */
+       margin-right: auto; /* Maintain centering */
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 2rem; /* Assuming 2rem was the desired gap */
+       padding: 40px 20px; /* Assuming this was desired padding */
+       box-sizing: border-box;
+       /* background-color: fuchsia; */ /* Optional: for diagnosing #crew itself */
+     }
+
+     @media (min-width: 576px) {
+       .team-member {
+         display: flex; /* Ensure it's a flex container for image and text */
+         align-items: center; /* Vertically align image and text block */
+         max-width: 1000px; /* Allow individual cards to be very wide */
+         background-color: #fff; /* Example: if cards had a background */
+         border-radius: 12px;
+         box-shadow: 0 0 10px rgba(0,0,0,0.1);
+         margin-bottom: 20px; /* Spacing between cards if they stack or are in single column */
+         gap: 20px; /* Spacing between image and text-info */
+         /* background-color: aqua; */ /* Optional: for diagnosing .team-member */
+       }
+       .team-member img {
+         width: 180px; /* Size of the image */
+         height: 180px;
+         border-radius: 50%;
+         object-fit: cover;
+         flex-shrink: 0; /* Prevent image from shrinking */
+       }
+       .member-info {
+         flex-grow: 1; /* Allow text area to grow and take available space */
+         flex-shrink: 1; /* Allow shrinking if necessary, though grow should dominate */
+         flex-basis: 0; /* Let flex-grow manage the width primarily */
+         min-width: 300px; /* As a fallback, ensure it has some substantial minimum width */
+         text-align: left; /* Ensure text is left-aligned */
+         /* background-color: lime; */ /* Optional: for diagnosing .member-info */
+       }
+       .member-info h2 {
+          /* styles for name */
+          font-size: 1.5rem; /* Example */
+          margin-bottom: 0.5rem; /* Example */
+          color: #343a40; /* From original styles.css */
+       }
+       .member-info p {
+          /* styles for description */
+          font-size: 1rem; /* Example */
+          line-height: 1.6; /* Example */
+          color: #555; /* From original styles.css */
+       }
+     }
+
+    /* Styles for stacked view on smaller screens (ensure they are sensible) */
+    /* These might already be in styles.css and working, but for completeness if overriding: */
+    .team-member { /* Base style, applies mobile-first */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px; /* Was 30px, using 20px from media query for consistency */
+        background-color: #fff; /* Card style on mobile too */
+        border-radius: 12px; /* Card style on mobile too */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Card style on mobile too */
+        padding: 15px; /* Was 20px, adjusted slightly */
+        max-width: 320px; /* From original mobile styles */
+    }
+    .team-member img { /* Base style for image */
+        width: 250px; /* Larger image for stacked view */
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        flex-shrink: 0; /* Prevent image from shrinking if card is very narrow */
+    }
+    .member-info { /* Base style for text info */
+        /* min-width not as critical here, will take width of parent */
+        /* text-align: center; is inherited from .team-member base */
+    }
+    .member-info h2 {
+        font-size: 1.4em; /* From original mobile styles */
+        color: #343a40;
+        margin-bottom: 8px; /* From original mobile styles */
+    }
+    .member-info p {
+        font-size: 0.95rem; /* From original mobile styles */
+        line-height: 1.5; /* From original mobile styles */
+        color: #555;
+    }
+
+   </style>
 </head>
 <body>
     <div id="welcome-section">
